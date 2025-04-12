@@ -39,8 +39,8 @@ const CountdownTimer = ({ nextBirthday }: CountdownTimerProps) => {
   }, [nextBirthday]);
   
   return (
-    <div className="bg-pink-400 px-3 py-2 text-white rounded-xl border-4 border-black shadow-[3px_3px_0px_0px_#000]">
-      <div className="text-xs font-vt323">
+    <div className="bg-gradient-to-br from-pink-400 to-pink-500 px-3 py-2 text-white rounded-full border-2 border-pink-300 shadow-[3px_3px_0px_0px_rgba(236,72,153,0.3)]">
+      <div className="text-xs font-pixelify">
         Next birthday in:
       </div>
       <div className="font-pixelify font-bold">
