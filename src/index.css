@@ -1,101 +1,261 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&family=Pixelify+Sans:wght@400;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 0 0% 0%;
+    --card-foreground: 0 0% 100%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 0%;
+    --popover-foreground: 0 0% 100%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 296 84% 60%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 199 80% 53%;
+    --secondary-foreground: 0 0% 0%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 0 0% 20%;
+    --muted-foreground: 0 0% 80%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 32 99% 81%;
+    --accent-foreground: 0 0% 0%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 0 0% 30%;
+    --input: 0 0% 20%;
+    --ring: 296 84% 60%;
 
-    --radius: 0.5rem;
+    --radius: 0;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-}
-
-@layer base {
   * {
     @apply border-border;
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-pixelify overflow-x-hidden;
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23D946EF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg>') 12 12, auto;
   }
+
+  button, a, [role="button"] {
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%2333C3F0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg>') 12 12, pointer;
+  }
+}
+
+.brutalist-box {
+  @apply bg-white border-4 border-black shadow-[8px_8px_0px_0px_#000];
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.brutalist-box:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 10px 10px 0px 0px #000;
+}
+
+.brutalist-box-pink {
+  @apply bg-himanshi-pink border-4 border-black shadow-[8px_8px_0px_0px_#000];
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.brutalist-box-pink:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 10px 10px 0px 0px #000;
+}
+
+.brutalist-box-blue {
+  @apply bg-himanshi-blue border-4 border-black shadow-[8px_8px_0px_0px_#000];
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.brutalist-box-blue:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 10px 10px 0px 0px #000;
+}
+
+.brutalist-box-yellow {
+  @apply bg-himanshi-yellow border-4 border-black shadow-[8px_8px_0px_0px_#000];
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.brutalist-box-yellow:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 10px 10px 0px 0px #000;
+}
+
+.glitch-text {
+  position: relative;
+  display: inline-block;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.glitch-text::before {
+  left: 2px;
+  text-shadow: -1px 0 red;
+  animation: glitch-animation 0.3s infinite;
+}
+
+.glitch-text::after {
+  left: -2px;
+  text-shadow: 2px 0 blue;
+  animation: glitch-animation 0.3s infinite reverse;
+}
+
+@keyframes glitch-animation {
+  0% {
+    clip-path: inset(26% 0 89% 0);
+  }
+  5% {
+    clip-path: inset(35% 0 36% 0);
+  }
+  10% {
+    clip-path: inset(23% 0 59% 0);
+  }
+  15% {
+    clip-path: inset(12% 0 19% 0);
+  }
+  20% {
+    clip-path: inset(67% 0 3% 0);
+  }
+  25% {
+    clip-path: inset(47% 0 31% 0);
+  }
+  30% {
+    clip-path: inset(41% 0 28% 0);
+  }
+  35% {
+    clip-path: inset(54% 0 8% 0);
+  }
+  40% {
+    clip-path: inset(2% 0 67% 0);
+  }
+  45% {
+    clip-path: inset(96% 0 1% 0);
+  }
+  50% {
+    clip-path: inset(60% 0 30% 0);
+  }
+  55% {
+    clip-path: inset(4% 0 61% 0);
+  }
+  60% {
+    clip-path: inset(67% 0 25% 0);
+  }
+  65% {
+    clip-path: inset(93% 0 4% 0);
+  }
+  70% {
+    clip-path: inset(80% 0 4% 0);
+  }
+  75% {
+    clip-path: inset(16% 0 68% 0);
+  }
+  80% {
+    clip-path: inset(43% 0 27% 0);
+  }
+  85% {
+    clip-path: inset(92% 0 4% 0);
+  }
+  90% {
+    clip-path: inset(45% 0 46% 0);
+  }
+  95% {
+    clip-path: inset(32% 0 31% 0);
+  }
+  100% {
+    clip-path: inset(60% 0 25% 0);
+  }
+}
+
+.card-container {
+  perspective: 1000px;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+  position: relative;
+}
+
+.card.flipped {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
+
+.flashing-lights {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.flashing-light {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0;
+  animation: flash 1s ease-in-out infinite;
+}
+
+@keyframes flash {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.confetti {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  pointer-events: none;
+  z-index: 999;
 }
