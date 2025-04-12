@@ -3,7 +3,6 @@ import { useEffect, useState, useRef } from "react";
 import SplashScreen from "@/components/SplashScreen";
 import BirthdayRoast from "@/components/BirthdayRoast";
 import MemoryArchive from "@/components/MemoryArchive";
-import HimanshiQuiz from "@/components/HimanshiQuiz";
 import SecretUnlock from "@/components/SecretUnlock";
 import Finale from "@/components/Finale";
 import CountdownTimer from "@/components/CountdownTimer";
@@ -21,7 +20,6 @@ const Index = () => {
     <SplashScreen key="splash" onEnter={() => setHasEntered(true)} />,
     <BirthdayRoast key="roast" createConfetti={createConfetti} />,
     <MemoryArchive key="memories" />,
-    <HimanshiQuiz key="quiz" />,
     <SecretUnlock key="secret" isUnlocked={secretUnlocked} setUnlocked={setSecretUnlocked} />,
     <Finale key="finale" />
   ];
@@ -32,7 +30,7 @@ const Index = () => {
       // Show welcoming toast when entering the app
       toast({
         title: "Happy Birthday Himanshi! 🎂",
-        description: "Welcome to your chaotic birthday experience!",
+        description: "Welcome to your cute birthday experience!",
         duration: 5000,
       });
     }
@@ -54,7 +52,7 @@ const Index = () => {
 
   const revealSecret = () => {
     setSecretUnlocked(true);
-    setCurrentSection(4);
+    setCurrentSection(3); // Updated index since we removed HimanshiQuiz
     window.scrollTo(0, 0);
     toast({
       title: "Secret Unlocked! 🔓",
@@ -65,9 +63,9 @@ const Index = () => {
   };
 
   return (
-    <div className="relative min-h-screen overflow-x-hidden bg-black" ref={containerRef}>
+    <div className="relative min-h-screen overflow-x-hidden bg-gradient-to-b from-black to-purple-900" ref={containerRef}>
       {/* Hidden easter egg button */}
-      {hasEntered && currentSection !== 4 && (
+      {hasEntered && currentSection !== 3 && (
         <div 
           className="fixed bottom-2 right-2 w-10 h-10 z-50 opacity-20 hover:opacity-100 transition-opacity"
           onClick={revealSecret}
@@ -91,18 +89,18 @@ const Index = () => {
               {currentSection > 1 && (
                 <button 
                   onClick={goToPrevSection}
-                  className="brutalist-box-pink px-6 py-3 text-black font-bold"
+                  className="bg-himanshi-pink text-black px-6 py-3 rounded-xl border-4 border-black shadow-[5px_5px_0px_0px_#000] hover:translate-y-1 hover:shadow-[4px_4px_0px_0px_#000] transition-all font-bold"
                 >
-                  ← Previous Chaos
+                  ← Previous
                 </button>
               )}
               
               {currentSection < sections.length - 1 && (
                 <button 
                   onClick={goToNextSection}
-                  className={`brutalist-box-blue px-6 py-3 text-black font-bold ${currentSection === 1 ? "ml-auto" : ""}`}
+                  className={`bg-himanshi-blue text-white px-6 py-3 rounded-xl border-4 border-black shadow-[5px_5px_0px_0px_#000] hover:translate-y-1 hover:shadow-[4px_4px_0px_0px_#000] transition-all font-bold ${currentSection === 1 ? "ml-auto" : ""}`}
                 >
-                  More Chaos →
+                  Next →
                 </button>
               )}
             </div>

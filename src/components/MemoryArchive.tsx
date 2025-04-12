@@ -7,21 +7,21 @@ const memories = [
     id: 1,
     title: "Operation Monica Ma'am",
     emoji: "💥",
-    caption: "Survived chemistry by bullying the teacher instead.",
+    caption: "Steps to bunk the class: 'We have to go for computer practical.'",
     color: "pink"
   },
   {
     id: 2,
     title: "Rahul, Our Savior",
     emoji: "🧠",
-    caption: "Rahul writes. Himanshi yaps. We cheat. Teamwork.",
+    caption: "How to pass the test? Jagrit is doing 50% syllabus, I am doing 50%, rest we have Rahul.",
     color: "blue"
   },
   {
     id: 3,
     title: "Bluff Master",
     emoji: "🃏",
-    caption: "Said 3 kings. Wasn't lying. You folded. We cried.",
+    caption: "Snatch Jagrit's cards, let me play the game.",
     color: "yellow"
   }
 ];
@@ -61,7 +61,7 @@ const MemoryArchive = () => {
               onClick={() => toggleCard(memory.id)}
             >
               {/* Card Front */}
-              <div className={`card-front brutalist-box-${memory.color} p-6 flex flex-col items-center justify-center min-h-[250px]`}>
+              <div className={`card-front bg-${memory.color === 'pink' ? 'himanshi-pink' : memory.color === 'blue' ? 'himanshi-blue' : 'himanshi-yellow'} p-6 flex flex-col items-center justify-center min-h-[250px] rounded-2xl border-4 border-black shadow-[5px_5px_0px_0px_#000]`}>
                 <h3 className="text-xl md:text-2xl font-bold text-black mb-4">
                   {memory.title}
                 </h3>
@@ -74,7 +74,7 @@ const MemoryArchive = () => {
               </div>
               
               {/* Card Back */}
-              <div className={`card-back brutalist-box-${memory.color} p-6 flex flex-col items-center justify-center min-h-[250px]`}>
+              <div className={`card-back bg-${memory.color === 'pink' ? 'himanshi-pink' : memory.color === 'blue' ? 'himanshi-blue' : 'himanshi-yellow'} p-6 flex flex-col items-center justify-center min-h-[250px] rounded-2xl border-4 border-black shadow-[5px_5px_0px_0px_#000]`}>
                 <div className="text-5xl md:text-6xl mb-4">
                   {memory.emoji}
                 </div>

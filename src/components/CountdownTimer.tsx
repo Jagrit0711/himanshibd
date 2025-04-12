@@ -39,9 +39,9 @@ const CountdownTimer = ({ nextBirthday }: CountdownTimerProps) => {
   }, [nextBirthday]);
   
   return (
-    <div className="brutalist-box-blue px-3 py-2 text-black">
+    <div className="bg-himanshi-blue px-3 py-2 text-black rounded-xl border-4 border-black shadow-[3px_3px_0px_0px_#000]">
       <div className="text-xs font-vt323">
-        Next chaos in:
+        Next birthday in:
       </div>
       <div className="font-pixelify font-bold">
         {timeLeft.days}d {timeLeft.hours}h {timeLeft.minutes}m {timeLeft.seconds}s
