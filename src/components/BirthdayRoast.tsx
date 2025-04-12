@@ -40,7 +40,7 @@ const BirthdayRoast = ({ createConfetti }: BirthdayRoastProps) => {
   return (
     <div className="flex flex-col items-center">
       {/* Birthday intro with cute text */}
-      <h1 className="text-4xl md:text-6xl lg:text-7xl font-press-start text-himanshi-pink text-center mb-8" 
+      <h1 className="text-4xl md:text-6xl lg:text-7xl font-press-start text-pink-400 text-center mb-8" 
           style={{textShadow: "3px 3px 0px #FEC6A1"}}>
         YOU WERE A CHILD.
       </h1>
@@ -52,29 +52,19 @@ const BirthdayRoast = ({ createConfetti }: BirthdayRoastProps) => {
       </div>
       
       {/* Interactive buttons */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-3xl">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-3xl">
         <Button
           onClick={handleCakeClick}
-          className={`bg-himanshi-pink text-white border-4 border-black rounded-xl shadow-[5px_5px_0px_0px_#000] hover:translate-y-1 hover:shadow-[4px_4px_0px_0px_#000] transition-all text-xl font-bold py-6 ${showCake && cakeExploded ? "animate-shake" : ""}`}
+          className="bg-pink-400 text-white border-4 border-black rounded-xl shadow-[5px_5px_0px_0px_#000] hover:translate-y-1 hover:shadow-[4px_4px_0px_0px_#000] transition-all text-xl font-bold py-6"
         >
           Give me cake
         </Button>
         
         <Button
           onClick={playSpotify}
-          className={`bg-himanshi-yellow text-black border-4 border-black rounded-xl shadow-[5px_5px_0px_0px_#000] hover:translate-y-1 hover:shadow-[4px_4px_0px_0px_#000] transition-all text-xl font-bold py-6 ${spotifyPlayed ? "animate-bounce-mild" : ""}`}
+          className="bg-yellow-300 text-black border-4 border-black rounded-xl shadow-[5px_5px_0px_0px_#000] hover:translate-y-1 hover:shadow-[4px_4px_0px_0px_#000] transition-all text-xl font-bold py-6"
         >
           Play my anthem
-        </Button>
-        
-        <Button
-          className="bg-himanshi-blue text-white border-4 border-black rounded-xl shadow-[5px_5px_0px_0px_#000] hover:translate-y-1 hover:shadow-[4px_4px_0px_0px_#000] transition-all text-xl font-bold py-6"
-          onClick={() => {
-            const element = document.getElementById("memories");
-            element?.scrollIntoView({ behavior: "smooth" });
-          }}
-        >
-          What's next?
         </Button>
       </div>
       
@@ -84,11 +74,11 @@ const BirthdayRoast = ({ createConfetti }: BirthdayRoastProps) => {
           <div className="text-7xl md:text-9xl mb-4 cursor-pointer" onClick={handleCakeClick}>
             🎂
           </div>
-          <p className="text-xl text-himanshi-yellow font-bold">
+          <p className="text-xl text-yellow-300 font-bold">
             {cakeExploded ? "i ant sending it i dont want u to get diabetees" : "Click the cake for a surprise!"}
           </p>
           {cakeExploded && (
-            <p className="text-md text-himanshi-pink mt-2 font-pixelify italic">
+            <p className="text-md text-pink-400 mt-2 font-pixelify italic">
               ps i am broke
             </p>
           )}

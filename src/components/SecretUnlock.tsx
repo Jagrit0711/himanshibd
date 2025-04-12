@@ -25,7 +25,7 @@ const SecretUnlock = ({ isUnlocked, setUnlocked }: SecretUnlockProps) => {
   
   // Create blinking lights effect
   const flashingLights = Array.from({ length: 20 }).map((_, i) => {
-    const colors = ["#D946EF", "#33C3F0", "#FEC6A1"];
+    const colors = ["#FF9ED8", "#FFB6C1", "#FEC6A1"];
     const size = Math.random() * 80 + 20;
     const top = Math.random() * 100;
     const left = Math.random() * 100;
@@ -52,7 +52,7 @@ const SecretUnlock = ({ isUnlocked, setUnlocked }: SecretUnlockProps) => {
       <div className="flashing-lights">{flashingLights}</div>
       
       <div className="text-center mb-10">
-        <h2 className="text-3xl md:text-5xl font-press-start text-himanshi-pink mb-4">
+        <h2 className="text-3xl md:text-5xl font-press-start text-pink-400 mb-4">
           Secret Unlock
         </h2>
         <p className="text-xl font-pixelify text-white opacity-80">
@@ -60,7 +60,7 @@ const SecretUnlock = ({ isUnlocked, setUnlocked }: SecretUnlockProps) => {
         </p>
       </div>
       
-      <Card className="brutalist-box-pink mx-auto max-w-2xl p-8 relative z-10">
+      <Card className="mx-auto max-w-2xl p-8 bg-white rounded-2xl border-4 border-black shadow-[8px_8px_0px_0px_#000] relative z-10">
         <div className="text-black">
           <div className="text-center mb-6">
             <div className="text-6xl mb-4">
@@ -75,7 +75,7 @@ const SecretUnlock = ({ isUnlocked, setUnlocked }: SecretUnlockProps) => {
             {!isPlaying ? (
               <button
                 onClick={playMessage}
-                className="brutalist-box bg-black text-white px-6 py-3 font-bold text-lg"
+                className="bg-pink-400 text-white px-6 py-3 font-bold text-lg rounded-xl border-4 border-black shadow-[5px_5px_0px_0px_#000] hover:translate-y-1 hover:shadow-[4px_4px_0px_0px_#000] transition-all"
               >
                 Play Secret Message
               </button>
