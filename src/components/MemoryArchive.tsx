@@ -1,6 +1,7 @@
 
 import { useState } from "react";
 import { Card } from "@/components/ui/card";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const memories = [
   {
@@ -28,6 +29,7 @@ const memories = [
 
 const MemoryArchive = () => {
   const [flippedCards, setFlippedCards] = useState<number[]>([]);
+  const isMobile = useIsMobile();
   
   const toggleCard = (id: number) => {
     // Play flip sound
@@ -43,17 +45,17 @@ const MemoryArchive = () => {
   };
   
   return (
-    <div id="memories" className="py-8">
-      <div className="text-center mb-10">
-        <h2 className="text-3xl md:text-5xl font-press-start text-himanshi-blue mb-4">
+    <div id="memories" className="py-8 px-4">
+      <div className="text-center mb-8 md:mb-10">
+        <h2 className="text-2xl md:text-5xl font-press-start text-himanshi-blue mb-4">
           The Himanshi Archives
         </h2>
-        <p className="text-xl font-pixelify text-white opacity-80">
+        <p className="text-lg md:text-xl font-pixelify text-white opacity-80">
           (Classified Memories)
         </p>
       </div>
       
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
         {memories.map((memory) => (
           <div key={memory.id} className="card-container">
             <div 
@@ -61,24 +63,24 @@ const MemoryArchive = () => {
               onClick={() => toggleCard(memory.id)}
             >
               {/* Card Front */}
-              <div className={`card-front bg-${memory.color === 'pink' ? 'himanshi-pink' : memory.color === 'blue' ? 'himanshi-blue' : 'himanshi-yellow'} p-6 flex flex-col items-center justify-center min-h-[250px] rounded-2xl border-4 border-black shadow-[5px_5px_0px_0px_#000]`}>
-                <h3 className="text-xl md:text-2xl font-bold text-black mb-4">
+              <div className={`card-front bg-${memory.color === 'pink' ? 'himanshi-pink' : memory.color === 'blue' ? 'himanshi-blue' : 'himanshi-yellow'} p-4 md:p-6 flex flex-col items-center justify-center min-h-[200px] md:min-h-[250px] rounded-2xl border-4 border-black shadow-[5px_5px_0px_0px_#000]`}>
+                <h3 className="text-lg md:text-2xl font-bold text-black mb-3 md:mb-4">
                   {memory.title}
                 </h3>
-                <div className="text-6xl animate-bounce-mild">
+                <div className="text-4xl md:text-6xl animate-bounce-mild">
                   {memory.emoji}
                 </div>
-                <p className="mt-4 text-center text-black font-pixelify">
+                <p className="mt-3 md:mt-4 text-center text-black font-pixelify text-sm md:text-base">
                   Click to reveal memory
                 </p>
               </div>
               
               {/* Card Back */}
-              <div className={`card-back bg-${memory.color === 'pink' ? 'himanshi-pink' : memory.color === 'blue' ? 'himanshi-blue' : 'himanshi-yellow'} p-6 flex flex-col items-center justify-center min-h-[250px] rounded-2xl border-4 border-black shadow-[5px_5px_0px_0px_#000]`}>
-                <div className="text-5xl md:text-6xl mb-4">
+              <div className={`card-back bg-${memory.color === 'pink' ? 'himanshi-pink' : memory.color === 'blue' ? 'himanshi-blue' : 'himanshi-yellow'} p-4 md:p-6 flex flex-col items-center justify-center min-h-[200px] md:min-h-[250px] rounded-2xl border-4 border-black shadow-[5px_5px_0px_0px_#000]`}>
+                <div className="text-4xl md:text-6xl mb-3 md:mb-4">
                   {memory.emoji}
                 </div>
-                <p className="text-xl text-black font-pixelify text-center">
+                <p className="text-base md:text-xl text-black font-pixelify text-center">
                   {memory.caption}
                 </p>
               </div>

@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Cake, Music, Heart } from "lucide-react";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 interface BirthdayRoastProps {
   createConfetti: () => void;
@@ -11,6 +12,7 @@ const BirthdayRoast = ({ createConfetti }: BirthdayRoastProps) => {
   const [showCake, setShowCake] = useState<boolean>(false);
   const [cakeExploded, setCakeExploded] = useState<boolean>(false);
   const [spotifyPlayed, setSpotifyPlayed] = useState<boolean>(false);
+  const isMobile = useIsMobile();
   
   const handleCakeClick = () => {
     if (!showCake) {
@@ -39,31 +41,31 @@ const BirthdayRoast = ({ createConfetti }: BirthdayRoastProps) => {
   };
   
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center px-4">
       {/* Birthday intro with cute text */}
-      <h1 className="text-4xl md:text-6xl lg:text-7xl font-pixelify text-pink-400 text-center mb-8" 
+      <h1 className="text-3xl md:text-6xl lg:text-7xl font-pixelify text-pink-400 text-center mb-6 md:mb-8" 
           style={{textShadow: "3px 3px 0px #FEC6A1"}}>
         YOU WERE A CHILD.
       </h1>
       
-      <div className="mb-10 max-w-2xl mx-auto">
-        <p className="text-2xl md:text-3xl font-pixelify text-white text-center mb-4">
+      <div className="mb-8 md:mb-10 w-full max-w-2xl mx-auto">
+        <p className="text-xl md:text-3xl font-pixelify text-white text-center mb-4">
           you are 17 now ??? damn ur 5 foot
         </p>
       </div>
       
       {/* Interactive buttons */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-3xl">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 w-full max-w-3xl">
         <Button
           onClick={handleCakeClick}
-          className="bg-pink-400 text-white border-2 border-pink-500 rounded-full shadow-[5px_5px_0px_0px_rgba(236,72,153,0.3)] hover:translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(236,72,153,0.3)] transition-all text-xl font-bold py-6"
+          className="bg-pink-400 text-white border-2 border-pink-500 rounded-full shadow-[5px_5px_0px_0px_rgba(236,72,153,0.3)] hover:translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(236,72,153,0.3)] transition-all text-lg md:text-xl font-bold py-4 md:py-6"
         >
           <Cake className="mr-2 h-5 w-5" /> Give me cake
         </Button>
         
         <Button
           onClick={playSpotify}
-          className="bg-yellow-300 text-black border-2 border-yellow-400 rounded-full shadow-[5px_5px_0px_0px_rgba(250,204,21,0.3)] hover:translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(250,204,21,0.3)] transition-all text-xl font-bold py-6"
+          className="bg-yellow-300 text-black border-2 border-yellow-400 rounded-full shadow-[5px_5px_0px_0px_rgba(250,204,21,0.3)] hover:translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(250,204,21,0.3)] transition-all text-lg md:text-xl font-bold py-4 md:py-6"
         >
           <Music className="mr-2 h-5 w-5" /> Play my anthem
         </Button>
@@ -71,11 +73,11 @@ const BirthdayRoast = ({ createConfetti }: BirthdayRoastProps) => {
       
       {/* Cake and explosion effects */}
       {showCake && (
-        <div className={`mt-10 text-center ${cakeExploded ? "animate-shake" : "animate-scale-in"}`}>
-          <div className="text-7xl md:text-9xl mb-4 cursor-pointer" onClick={handleCakeClick}>
+        <div className={`mt-8 md:mt-10 text-center ${cakeExploded ? "animate-shake" : "animate-scale-in"}`}>
+          <div className="text-6xl md:text-9xl mb-4 cursor-pointer" onClick={handleCakeClick}>
             🎂
           </div>
-          <p className="text-xl text-yellow-300 font-bold font-pixelify">
+          <p className="text-lg md:text-xl text-yellow-300 font-bold font-pixelify">
             {cakeExploded ? "i ant sending it i dont want u to get diabetees" : "Click the cake for a surprise!"}
           </p>
           {cakeExploded && (
@@ -102,11 +104,11 @@ const BirthdayRoast = ({ createConfetti }: BirthdayRoastProps) => {
         </div>
       )}
       
-      {/* Decorative elements */}
-      <div className="absolute top-40 left-10 text-4xl animate-bounce-mild" style={{animationDuration: "4s"}}>
+      {/* Decorative elements - adjusted for mobile */}
+      <div className="absolute top-40 left-10 text-2xl md:text-4xl animate-bounce-mild" style={{animationDuration: "4s"}}>
         💫
       </div>
-      <div className="absolute bottom-20 right-10 text-4xl animate-bounce-mild" style={{animationDuration: "3.2s"}}>
+      <div className="absolute bottom-20 right-10 text-2xl md:text-4xl animate-bounce-mild" style={{animationDuration: "3.2s"}}>
         💖
       </div>
     </div>
